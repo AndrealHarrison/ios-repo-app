@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func saveToAPI(_ sender: Any) {
         //TODO: create a Repository object needed to invoke the API's create method at http://216.186.69.45/services/device/users/
-        let userRepo = 
+        let userRepo = Repository<User>(withPath: "https://mikethetall.pythonanywhere.com/devices")
         
         let newUser = User()
         newUser.FirstName = firstName.text
