@@ -32,9 +32,9 @@ class ViewController: UIViewController {
         newUser.PhoneNumber = phoneNumber.text
         newUser.SID = sid.text
         
-        userRepo.create(a: newUser)  { (user) in
-            if let id = user?.UserID, let first = user?.FirstName, let last = user?.LastName {
-                self.resultInfo.text = "Successfully create user \(first) \(last) with id \(id)"
+        userRepo.create(a: newUser)  { (T) in
+            if let id = T?.UserID, let first = T?.FirstName, let last = T?.LastName {
+                print("Successfully create user \(first) \(last) with id \(id)")
             }
         }
     }
