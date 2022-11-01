@@ -30,12 +30,11 @@ class ViewController: UIViewController {
         newUser.PhoneNumber = phoneNumber.text
         newUser.SID = sid.text
         
-        userRepo.create(a: newUser)  { (user) in
+        userRepo.create(a: User)  { (user) in
             if let id = user?.UserID, let first = user?.FirstName, let last = user?.LastName {
                 self.resultInfo.text = "Successfully create user \(first) \(last) with id \(id)"
             }
         }
     }
-    
 }
 
